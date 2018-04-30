@@ -3,13 +3,13 @@ CC = g++
 
 compile: $(OBJ)
 	@echo [CPP] Link SECPM...
-	@$(CC) -fpermissive -static -W -o secpm secpm.o -w
+	@$(CC) -fpermissive -static -W -o secpm $(OBJ) -w
 	@echo [CPP] Finished!
 	@echo "–––––––––––––––––––––––––––"
 	@rm secpm.o
 
-secpm.o:
+$(OBJ):
 	@echo [CPP] Compile SECPM...
-	@$(CC) -static -W -c main.cpp -o secpm.o -w
+	@$(CC) -static -W -c main.cpp -o $(OBJ) -w
 	@echo [CPP] Finished!
 	@echo "–––––––––––––––––––––––––––"
